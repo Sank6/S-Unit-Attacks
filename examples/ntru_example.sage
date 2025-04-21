@@ -1,18 +1,18 @@
-n = 7
+n = 8
 p = 3
-q = 59
+q = 41
 d = 2
 
-K.<x> = CyclotomicField(n)
+K.<x> = CyclotomicField(2*n)
 R = K.ring_of_integers()
 
-f = 1 + x + x^3
-g = x^3 + x^5
+f = -x^7 - x^6 - x^4
+g = x^6 + x^4 - x^2 - x
 
 f_p = f.inverse_mod(p)
 f_q = f.inverse_mod(q)
 
-h = (p * f_q * g).mod(q)
+h = (f_q * g).mod(q)
 
 print(f"f: {f}")
 print(f"g: {g}")
